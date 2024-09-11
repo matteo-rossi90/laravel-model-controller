@@ -3,23 +3,41 @@
 
 @section('content')
 <div class="container my-5">
-    <h1>Home</h1>
+    <h1>{{ $title }}</h1>
     {{-- <img src="{{ Vite::asset('resources/img/colibri.jpg') }}" alt="" class="img-fluid"> --}}
+
     <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut dignissimos hic minus amet, impedit fugiat
-        consectetur eos officia repellendus, porro quasi voluptate facilis quam fuga! Voluptatum fuga saepe illum
-        accusamus quam amet pariatur debitis nemo aliquam est corrupti aut repudiandae, dolorum quasi aperiam inventore.
-        Natus hic magni adipisci cumque laudantium, dolore veritatis, commodi illo eius porro quasi. Cupiditate temporibus
-        optio totam error quam ipsa a distinctio! Maxime quo esse fugit tempore. Ipsa ad adipisci quod qui distinctio omnis
-        quam, nemo praesentium blanditiis unde explicabo sed ex necessitatibus neque at fugiat fuga minima voluptas officia hic?
-        Eum, rem corporis placeat accusantium voluptatem fugit sit quae, eveniet tempora minima dignissimos, beatae soluta
-        maiores voluptate magni. Velit accusamus non illo ut repellendus qui libero officiis vero molestiae quis quasi
-        dignissimos provident deleniti nostrum doloribus esse voluptates modi, necessitatibus eius molestias.
-        Quas recusandae, doloribus officiis dolorem dolor nihil doloremque, placeat perferendis, iusto unde est odio?
-        Dolor fuga iure id unde dolorum dicta sapiente qui aut ipsam blanditiis. Delectus in officia quasi voluptatum voluptas
-        tempora laboriosam impedit? Quibusdam, mollitia rerum! Animi ipsa veritatis repellat, laborum corrupti tenetur
-        fugit, quos iste quas perferendis eligendi non, nisi quod a est eaque magnam? Ab inventore fugiat laborum sint.
+        {{ $text }}
     </p>
+
+    <div class="row g-3 wrap">
+        @foreach ( $movies as $movie )
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title py-2">{{ $movie->title }}</h5>
+                        <div class="py-2">
+                            <span class="little-title">Titolo originale:</span><span> {{$movie->original_title }}</span>
+                        </div>
+                        <div class="py-2">
+                            <span class="little-title">Lingua: </span><span> {{$movie->nationality }}</span>
+                        </div>
+                        <div class="py-2">
+                            <span class="little-title">Voto: </span><span> {{$movie->vote }}</span>
+                        </div>
+                        <div class="py-2">
+                            <span class="little-title">Data di uscita: </span><span> {{$movie->date }}</span>
+                        </div>
+                        {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+                    </div>
+                </div>
+
+        </div>
+        @endforeach
+
+    </div>
+
+
 </div>
 
 @endsection
