@@ -19,16 +19,9 @@
                         <div class="py-2">
                             <span class="little-title">Titolo originale:</span><span> {{$movie->original_title }}</span>
                         </div>
-                        <div class="py-2">
-                            <span class="little-title">Lingua: </span><span> {{$movie->nationality }}</span>
+                        <div class="d-flex justify-content-center py-3">
+                            <a href="{{ route('description', ['id' => $movie->id]) }}" class="btn btn-primary">Per saperne di più</a>
                         </div>
-                        <div class="py-2">
-                            <span class="little-title">Voto: </span><span> {{$movie->vote }}</span>
-                        </div>
-                        <div class="py-2">
-                            <span class="little-title">Data di uscita: </span><span> {{$movie->date }}</span>
-                        </div>
-                        {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                     </div>
                 </div>
 
